@@ -21,31 +21,60 @@ namespace GLib {
 
 	public class VariantType : IDisposable {
 
-		public static VariantType Boolean = new VariantType ("b");
-		public static VariantType Byte = new VariantType ("y");
-		public static VariantType Int16 = new VariantType ("n");
-		public static VariantType UInt16 = new VariantType ("q");
-		public static VariantType Int32 = new VariantType ("i");
-		public static VariantType Uint32 = new VariantType ("u");
-		public static VariantType Int64 = new VariantType ("x");
-		public static VariantType UInt64 = new VariantType ("t");
-		public static VariantType Double = new VariantType ("d");
-		public static VariantType String = new VariantType ("s");
-		public static VariantType Path = new VariantType ("o");
-		public static VariantType Signature = new VariantType ("g");
-		public static VariantType Variant = new VariantType ("v");
-		public static VariantType HandleType = new VariantType ("h");
-		public static VariantType Unit = new VariantType ("()");
-		public static VariantType Any = new VariantType ("*");
-		public static VariantType Basic = new VariantType ("?");
-		public static VariantType Maybe = new VariantType ("m*");
-		public static VariantType Array = new VariantType ("a*");
-		public static VariantType Tuple = new VariantType ("r");
-		public static VariantType DictEntry = new VariantType ("{?*}");
-		public static VariantType Dictionary = new VariantType ("a{?*}");
-		public static VariantType StringArray = new VariantType ("as");
-		public static VariantType ByteString = new VariantType ("ay");
-		public static VariantType ByteStringArray = new VariantType ("aay");
+		public static readonly VariantType Boolean;
+		public static readonly VariantType Byte;
+		public static readonly VariantType Int16;
+		public static readonly VariantType UInt16;
+		public static readonly VariantType Int32;
+		public static readonly VariantType Uint32;
+		public static readonly VariantType Int64;
+		public static readonly VariantType UInt64;
+		public static readonly VariantType Double;
+		public static readonly VariantType String;
+		public static readonly VariantType Path;
+		public static readonly VariantType Signature;
+		public static readonly VariantType Variant;
+		public static readonly VariantType HandleType;
+		public static readonly VariantType Unit;
+		public static readonly VariantType Any;
+		public static readonly VariantType Basic;
+		public static readonly VariantType Maybe;
+		public static readonly VariantType Array;
+		public static readonly VariantType Tuple;
+		public static readonly VariantType DictEntry;
+		public static readonly VariantType Dictionary;
+		public static readonly VariantType StringArray;
+		public static readonly VariantType ByteString;
+		public static readonly VariantType ByteStringArray;
+
+		static VariantType()
+		{
+			Boolean = new VariantType ("b");
+			Byte = new VariantType ("y");
+			Int16 = new VariantType ("n");
+			UInt16 = new VariantType ("q");
+			Int32 = new VariantType ("i");
+			Uint32 = new VariantType ("u");
+			Int64 = new VariantType ("x");
+			UInt64 = new VariantType ("t");
+			Double = new VariantType ("d");
+			String = new VariantType ("s");
+			Path = new VariantType ("o");
+			Signature = new VariantType ("g");
+			Variant = new VariantType ("v");
+			HandleType = new VariantType ("h");
+			Unit = new VariantType ("()");
+			Any = new VariantType ("*");
+			Basic = new VariantType ("?");
+			Maybe = new VariantType ("m*");
+			Array = new VariantType ("a*");
+			Tuple = new VariantType ("r");
+			DictEntry = new VariantType ("{?*}");
+			Dictionary = new VariantType ("a{?*}");
+			StringArray = new VariantType ("as");
+			ByteString = new VariantType ("ay");
+			ByteStringArray = new VariantType ("aay");
+		}
 
 		delegate bool d_g_variant_type_string_is_valid(IntPtr type_string);
 		static d_g_variant_type_string_is_valid g_variant_type_string_is_valid = FuncLoader.LoadFunction<d_g_variant_type_string_is_valid>(FuncLoader.GetProcAddress(GLibrary.Load(Library.GLib), "g_variant_type_string_is_valid"));
